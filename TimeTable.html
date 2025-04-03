@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTable</title>
+    <link rel="stylesheet" href="timeStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001F3F;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.webp" id="myLOGO" style="height: 50px; border-radius: 50%; margin-bottom: 10px;">
+                <span id="myH2">PROJECT-S</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="Home.html">Home</a></li>
+                    <!-- Games Section Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Games Section
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="Game/Random/random.html">Random Number</a></li>
+                            <li><a class="dropdown-item" href="Game/Typespeed.html">Type Speed</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="TodoList/TodoList.html">To-do List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="TimeTable.html">TimeTable</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Notes/notes.html">Notes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Clock Section -->
+    <div class="clock-container">
+        <div id="clock">Indian Standard Time (IST): <span id="current-time"></span></div>
+        <div id="class-status">
+            <p><strong>Ongoing Class:</strong> <span id="ongoing-class">No ongoing class at the moment.</span></p>
+            <p><strong>Upcoming Class:</strong> <span id="upcoming-class">No upcoming class scheduled.</span></p>
+            <p><strong>Time Left for Next Class:</strong> <span id="countdown-timer">00:00:00</span></p>
+        </div>
+        <div id="class-progress">
+            <div class="progress-bar" style="width: 0%;"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Today's Schedule</h1>
+        
+        <div class="select">
+            <label for="day-select">Select a Day:</label>
+            <select id="day-select" onchange="updateTimetable()">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+        </div>
+        <h3 id="head">Monday's Schedule</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Time</th>
+                        <th>Subject</th>
+                    </tr>
+                </thead>
+                <tbody id="time-table-body"></tbody>
+            </table>
+        </div>
+        <!-- Motivational Quote -->
+        <div id="motivational-quote">
+            <p>"The future belongs to those who believe in the beauty of their dreams." – Eleanor Roosevelt</p>
+        </div>
+        <!-- Quick Notes -->
+        <div class="quick-notes">
+            <h4>Quick Notes</h4>
+            <textarea placeholder="Write your notes here..."></textarea>
+        </div>
+        <!-- Back Button -->
+        <div class="back-button-container">
+            <a href="home.html" class="btn btn-primary">Back to Home</a>
+            <button onclick="window.print()" class="btn btn-primary">Print Schedule</button>
+            <button id="theme-toggle" class="btn btn-primary">Toggle Dark Mode</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-white pt-5" style="background-color: #001F3F;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">About Us</h5>
+                    <p class="small">
+                        Project S is an all-in-one academic platform that helps students efficiently manage their tasks, schedules, and study progress.
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="Home.html" class="text-white text-decoration-none">🏠 Home</a></li>
+                        <li><a href="game/Typespeed.html" class="text-white text-decoration-none">🎮 Games Section</a></li>
+                        <li><a href="TodoList/TodoList.html" class="text-white text-decoration-none">📝 To-Do List</a></li>
+                        <li><a href="TimeTable.html" class="text-white text-decoration-none">📅 TimeTable</a></li>
+                        <li><a href="notes.html" class="text-white text-decoration-none">📖 Notes</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none">📊 About US</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Contact Us</h5>
+                    <p><i class="fas fa-envelope"></i> KALI_YUGA_CODERS</p>
+                    <p><i class="fas fa-phone"></i> +91 96xxxxxxxx</p>
+                    <p><i class="fas fa-map-marker-alt"></i> India</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://www.linkedin.com/in/jayasimha-p-49465b22a" class="text-white fs-4" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        
+                        <a href="https://github.com/your-github-username" class="text-white fs-4" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 mt-4" style="background-color: rgba(255, 255, 255, 0.1);">
+            © 2024 <strong>Project S</strong>. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Existing JavaScript code remains the same
+        // Add new JavaScript for additional features
+        const timetable = {
+            "Monday": [
+                { Period: "P1", Time: "9:30AM-10:30AM", Subject: "OR" },
+                { Period: "P2", Time: "10:40AM-11:40AM", Subject: "CD" },
+                { Period: "P3", Time: "11:40AM-12:40PM", Subject: "WT" },
+                { Period: "Lunch Break", Time: "12:40PM-1:40PM", Subject: "-" },
+                { Period: "P4", Time: "1:40PM-4:40PM", Subject: "WT Lab" }
+            ],
+            "Tuesday": [
+                { Period: "P1", Time: "9:30AM-10:30AM", Subject: "Leisure" },
+                { Period: "P2", Time: "10:40AM-11:40AM", Subject: "DSP" },
+                { Period: "P3", Time: "11:40AM-12:40PM", Subject: "COA" },
+                { Period: "Lunch Break", Time: "12:40PM-1:40PM", Subject: "-" },
+                { Period: "P4", Time: "1:40PM-4:40PM", Subject: "DSP Lab" }
+            ],
+            "Wednesday": [
+                { Period: "P1", Time: "9:30AM-10:30AM", Subject: "Leisure" },
+                { Period: "P2", Time: "10:40AM-11:40AM", Subject: "COA" },
+                { Period: "P3", Time: "11:40AM-12:40PM", Subject: "WT" },
+                { Period: "Lunch Break", Time: "12:40PM-1:40PM", Subject: "-" },
+                { Period: "P4", Time: "1:40PM-4:40PM", Subject: "COA Lab" }
+            ],
+            "Thursday": [
+                { Period: "P1", Time: "9:30AM-10:30AM", Subject: "CD" },
+                { Period: "P2", Time: "10:40AM-11:40AM", Subject: "DSP" },
+                { Period: "P3", Time: "11:40AM-12:40PM", Subject: "OR" },
+                { Period: "Lunch Break", Time: "12:40PM-1:40PM", Subject: "-" }
+            ],
+            "Friday": [
+                { Period: "P1", Time: "9:30AM-10:30AM", Subject: "COA" },
+                { Period: "P2", Time: "10:40AM-11:40AM", Subject: "WT" },
+                { Period: "P3", Time: "11:40AM-12:40PM", Subject: "CD" },
+                { Period: "Lunch Break", Time: "12:40PM-1:40PM", Subject: "-" }
+            ],
+            "Saturday": [
+                { Period: "P1", Time: "9:30AM-10:30AM", Subject: "OR" },
+                { Period: "P2", Time: "10:40AM-11:40AM", Subject: "DSP" },
+                { Period: "P3", Time: "11:40AM-12:40PM", Subject: "Mentee-Mentor" },
+                { Period: "Lunch Break", Time: "12:40PM-1:40PM", Subject: "-" },
+                { Period: "P4", Time: "1:40PM-4:40PM", Subject: "Community Work" }
+            ]
+        };
+        
+        function updateTimetable() {
+            let day = document.getElementById("day-select").value;
+            document.getElementById("head").innerText = `${day}'s Schedule`;
+            let tbody = document.getElementById("time-table-body");
+            tbody.innerHTML = "";
+        
+            if (timetable[day]) {
+                timetable[day].forEach(slot => {
+                    let row = `<tr>
+                        <td>${slot.Period}</td>
+                        <td>${slot.Time}</td>
+                        <td>${slot.Subject}</td>
+                    </tr>`;
+                    tbody.innerHTML += row;
+                });
+            } else {
+                tbody.innerHTML = `<tr><td colspan="3" style="text-align: center; font-weight: bold;">No Classes Today</td></tr>`;
+            }
+        
+            // Update class status when the timetable changes
+            updateClassStatus(new Date());
+        }
+        
+        // Function to update the clock
+        function updateClock() {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const timeString = now.toLocaleTimeString('en-IN', options);
+            document.getElementById("current-time").textContent = timeString;
+        
+            // Update ongoing and upcoming classes
+            updateClassStatus(now);
+        }
+        
+        // Function to update ongoing and upcoming classes
+        function updateClassStatus(currentTime) {
+            const day = document.getElementById("day-select").value;
+            const schedule = timetable[day] || [];
+            let ongoingClass = "No ongoing class at the moment.";
+            let upcomingClass = "No upcoming class scheduled.";
+            let nextClassTime = null;
+        
+            for (let i = 0; i < schedule.length; i++) {
+                const slot = schedule[i];
+                const [startTime, endTime] = slot.Time.split('-').map(time => convertTimeToDate(time.trim(), currentTime));
+        
+                if (currentTime >= startTime && currentTime <= endTime) {
+                    ongoingClass = `${slot.Period}: ${slot.Subject}`;
+                    updateProgressBar(startTime, endTime); // Update progress bar for ongoing class
+                } else if (currentTime < startTime && !nextClassTime) {
+                    upcomingClass = `${slot.Period}: ${slot.Subject}`;
+                    nextClassTime = startTime; // Set next class time for countdown
+                }
+            }
+        
+            document.getElementById("ongoing-class").textContent = ongoingClass;
+            document.getElementById("upcoming-class").textContent = upcomingClass;
+        
+            // Update countdown timer for the next class
+            if (nextClassTime) {
+                updateCountdownTimer(nextClassTime);
+            } else {
+                document.getElementById("countdown-timer").textContent = "00:00:00";
+            }
+        }
+        
+        // Helper function to convert time string to Date object
+        function convertTimeToDate(timeString, currentDate) {
+            const [time, modifier] = timeString.split(/(AM|PM)/);
+            let [hours, minutes] = time.split(':').map(Number);
+        
+            if (modifier === 'PM' && hours !== 12) {
+                hours += 12;
+            } else if (modifier === 'AM' && hours === 12) {
+                hours = 0;
+            }
+        
+            const date = new Date(currentDate);
+            date.setHours(hours, minutes, 0, 0);
+            return date;
+        }
+        
+        // Update Progress Bar
+        function updateProgressBar(startTime, endTime) {
+            const now = new Date();
+            const totalDuration = endTime - startTime;
+            const elapsed = now - startTime;
+            const progress = (elapsed / totalDuration) * 100;
+            document.querySelector(".progress-bar").style.width = `${Math.min(progress, 100)}%`;
+        }
+        
+        // Update Countdown Timer
+        function updateCountdownTimer(nextClassTime) {
+            const now = new Date();
+            const timeDiff = nextClassTime - now;
+            if (timeDiff > 0) {
+                const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+                document.getElementById("countdown-timer").textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            } else {
+                document.getElementById("countdown-timer").textContent = "00:00:00";
+            }
+        }
+        
+        // Dark Mode Toggle
+        document.getElementById("theme-toggle").addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+        
+        // Update the clock and class status every second
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to display the clock immediately
+        updateTimetable(); // Initial call to display the timetable
+    </script>
+</body>
+</html>

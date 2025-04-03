@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Project S</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f4f4f4, #e8e8e8);
+    color: #111213;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #f39c12;
+    transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f39c12;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #1E3A5F;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Image Styling */
+img {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 150px;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    background: #3f99f3e5;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 90%;
+    transition: 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: scale(1.02);
+}
+
+/* Lists */
+ul, ol {
+    padding-left: 25px;
+}
+
+ul li, ol li {
+    font-size: 20px;
+    line-height: 1.8;
+    padding: 5px 0;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    transform: scale(1.1);
+}
+
+/* Accordion */
+.accordion-button {
+    background-color: #1E3A5F;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+    border-radius: 6px;
+}
+
+.accordion-button:hover {
+    background-color: #f39c12;
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    background: #001F3F;
+    color: white;
+    padding: 25px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+footer:hover {
+    background: #002b5e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001F3F;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.webp" id="myLOGO" style="height: 50px; border-radius: 50%; margin-bottom: 10px;">
+                <span id="myH2">PROJECT-S</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="Home.html">Home</a></li>
+                    
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Games Section
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="Game/Random/random.html">Random Number</a></li>
+                            <li><a class="dropdown-item" href="Game/Typespeed.html">Type Speed</a></li>
+                        </ul>
+                    </li>
+            
+                    <li class="nav-item"><a class="nav-link" href="TodoList/TodoList.html">To-do List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="TimeTable.html">TimeTable</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Notes/notes.html">Notes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+<section class="container mt-5">
+    <h1 class="text-center">About Project-S</h1>
+    <p class="text-center text-muted" style="font-size: 20px;">Your All-in-One Platform for Academic Success & Personal Growth</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <img src="aboutUsimg.jpg" class="img-fluid rounded" alt="Project S">
+        </div>
+        <div class="col-md-6">
+            <h2>What is Project-S?</h2>
+            <p style="font-size: 20px;">Project S is a smart academic tool designed to help students manage their studies efficiently. Whether it's planning schedules, organizing tasks, or improving study habits, Project S makes learning more productive and fun.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="container mt-5">
+    <h2 class="text-center">Key Features</h2>
+    <ul class="list-group">
+        <li class="list-group-item" style="font-size: 20px;">📌 To-Do List – Organize tasks and track progress.</li>
+        <li class="list-group-item" style="font-size: 20px;">📅 TimeTable – Plan and structure study sessions.</li>
+        <li class="list-group-item" style="font-size: 20px;">📝 Notes Keeper – Store and access study materials.</li>
+        <li class="list-group-item" style="font-size: 20px;">🎮 Educational Games – Enhance learning in a fun way.</li>
+    </ul>
+</section>
+
+<section class="container mt-5">
+    <h2 class="text-center">Our Mission & Vision</h2>
+    <p style="font-size: 20px;"><strong>Mission:</strong> To provide students with a seamless platform to manage their academics efficiently.</p>
+    <p style="font-size: 20px;"><strong>Vision:</strong> To revolutionize digital education with an intuitive and interactive learning experience.</p>
+</section>
+
+
+<section class="container mt-5">
+    <h2 class="text-center">Why Choose Project-S?</h2>
+    <ul>
+        <li style="font-size: 20px;">✅ Easy-to-use interface</li>
+        <li style="font-size: 20px;">✅ Completely free & open-source</li>
+        <li style="font-size: 20px;">✅ Works on all devices</li>
+        <li style="font-size: 20px;">✅ Minimalist and distraction-free</li>
+    </ul>
+</section>
+
+
+<section class="container mt-5">
+    <h2 class="text-center">How It Works?</h2>
+    <ol>
+        <li style="font-size: 20px;">📌 Sign Up / Log In</li>
+        <li style="font-size: 20px;">📅 Create a Study Plan using the TimeTable</li>
+        <li style="font-size: 20px;">✅ Manage tasks with the To-Do List</li>
+        <li style="font-size: 20px;">📝 Store notes in the Notes Keeper</li>
+    </ol>
+</section>
+
+
+<section class="container mt-5">
+    <h2 class="text-center">Frequently Asked Questions (FAQ)</h2>
+    <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    Is Project-S free to use?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse">
+                <div class="accordion-body">Yes, it is completely free!</div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    Does it work offline?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse">
+                <div class="accordion-body">Yes, certain features like Notes and To-Do lists use localStorage.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-white text-center p-4 mt-5" style="background-color: #001F3F;">
+    <p>© 2024 Project S. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

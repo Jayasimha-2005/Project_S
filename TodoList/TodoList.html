@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="Todostyle.css">
+    <script src="https://kit.fontawesome.com/2d37627c5f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001F3F;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../logo.webp" id="myLOGO" style="height: 50px; border-radius: 50%; margin-bottom: 10px;">
+                <span id="myH2">PROJECT-S</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="../Home.html">Home</a></li>
+                    
+                   <!-- Games Section Dropdown -->
+                   <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Games Section
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="../Game/Random/random.html">Random Number</a></li>
+                        <li><a class="dropdown-item" href="../Game/Typespeed.html">Type Speed</a></li>
+                    </ul>
+                </li>
+            
+                    <li class="nav-item"><a class="nav-link" href="TodoList.html">To-do List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../TimeTable.html">TimeTable</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Notes/notes.html">Notes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Main Content -->
+   <div class="main">
+    <!-- Flex Container -->
+    <div class="flex-container">
+        <!-- Image Section -->
+        <div class="image-container">
+            <img src="todoimage.jpg" alt="To-do List Image" class="todo-image">
+        </div>
+
+        <!-- To-do List Content -->
+        <div class="todo-content">
+            <h1 class="heading">To-do List</h1>
+            <input class="inputEl" type="text" id="taskToDoInput" placeholder="Enter your task to-do">
+            <h1 class="heading">Tasks to-do:</h1>
+            <ul id="resultToShow"></ul>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="text-white pt-5" style="background-color: #001F3F;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">About Us</h5>
+                    <p class="small">
+                        Project S is an all-in-one academic platform that helps students efficiently manage their tasks, schedules, and study progress.
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../Home.html" class="text-white text-decoration-none">🏠 Home</a></li>
+                        <li><a href="../Game/Typespeed.html" class="text-white text-decoration-none">🎮 Games Section</a></li>
+                        <li><a href="TodoList.html" class="text-white text-decoration-none">📝 To-Do List</a></li>
+                        <li><a href="../TimeTable.html" class="text-white text-decoration-none">📅 TimeTable</a></li>
+                        <li><a href="../Notes/notes.html" class="text-white text-decoration-none">📖 Notes</a></li>
+                        <li><a href="../about.html" class="text-white text-decoration-none">📊 About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Contact Us</h5>
+                    <p><i class="fas fa-envelope"></i> KALI_YUGA_CODERS</p>
+                    <p><i class="fas fa-phone"></i> +91 96xxxxxxxx</p>
+                    <p><i class="fas fa-map-marker-alt"></i> India</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://www.linkedin.com/in/jayasimha-p-49465b22a" class="text-white fs-4" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        
+                        <a href="https://github.com/your-github-username" class="text-white fs-4" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 mt-4" style="background-color: rgba(255, 255, 255, 0.1);">
+            © 2024 <strong>Project S</strong>. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="todo.js"></script>
+</body>
+</html>

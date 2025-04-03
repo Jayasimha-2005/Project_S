@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project S - Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <section>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+    <span></span> <span></span> <span></span> <span></span> <span></span> 
+    <div class="signin login-container" id="login-container">
+      <div class="content">
+        <h2 style="font-family:cursive;">Welcome to Project-S</h2>
+        <p style="color:greenyellow; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Project S is your all-in-one academic platform for managing tasks, schedules, and study progress efficiently.</p>
+        <div class="links">
+            <a href="#" onclick="showRegisterForm()" class="register-btn">Register</a>
+          </div>
+        <div class="form">
+          <div class="inputBox">
+            <input type="email" id="email" placeholder="email" required>
+          </div>
+          <div class="inputBox">
+            <input type="password" id="password" placeholder="password" required>
+          </div>
+          
+          
+          <div class="inputBox">
+            <input type="submit" value="Login" onclick="handleLogin(event)">
+          </div>
+          <p id="login-error" style="color:rgb(250, 145, 145); display: none;">Invalid email or password</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registration Form (Initially Hidden) -->
+    <div class="signin register-container" id="register-container" style="display: none;">
+      <div class="content">
+        <h2>Register for Project-S</h2>
+        <p style="color:greenyellow">Create an account to get started!</p>
+        <div class="links">
+            <a href="#" onclick="showLoginForm()" class="register-btn">Back to Login</a>
+        </div>
+        <div class="form">
+          <div class="inputBox">
+            <input type="email" placeholder="email" id="register-email" required>
+          </div>
+          <div class="inputBox">
+            <input type="password" id="register-password" placeholder="password" required>
+          </div>
+          
+          <div class="inputBox">
+            <input type="submit" value="Register" onclick="handleRegister(event)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Show Register Form
+    function showRegisterForm() {
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('register-container').style.display = 'block';
+    }
+
+    // Show Login Form
+    function showLoginForm() {
+        document.getElementById('login-container').style.display = 'block';
+        document.getElementById('register-container').style.display = 'none';
+    }
+
+    // Handle Registration
+    // Handle Registration
+function handleRegister(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('register-email').value.trim();
+    const password = document.getElementById('register-password').value.trim();
+
+    if (!email || !password) {
+        alert('Please enter both email and password.');
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    if (users.some(user => user.email === email)) {
+        alert('User already exists! Please log in.');
+        return;
+    }
+
+    users.push({ email, password });
+    localStorage.setItem('users', JSON.stringify(users));
+
+    alert('Registration Successful! You can now log in.');
+    showLoginForm();
+}
+
+
+    // Handle Login
+    function handleLogin(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+
+        if (users.find(user => user.email === email && user.password === password)) {
+            alert('Login Successful! Redirecting...');
+            window.location.href = 'Home.html'; // Redirect after login
+        } else {
+            document.getElementById('login-error').style.display = 'block';
+        }
+    }
+  </script>
+</body>
+</html>

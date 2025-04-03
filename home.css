@@ -1,0 +1,399 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5EFE6;
+    color: #1E3A5F;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Carousel Styles */
+.carousel-inner img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(7, 114, 255, 0.7);
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-caption h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #F4A261;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+    font-size: 1.3rem;
+    color: #D9D9D9;
+}/* Dropdown Menu Container */
+.navbar .dropdown-menu {
+    background-color: #1E3A5F; /* Match navbar background */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    padding: 10px 0; /* Add padding */
+    margin-top: 8px; /* Space between navbar and dropdown */
+}
+
+/* Dropdown Items */
+.navbar .dropdown-item {
+    color: #F5EFE6; /* Text color */
+    padding: 10px 20px; /* Padding for each item */
+    font-size: 1rem; /* Font size */
+    transition: all 0.3s ease; /* Smooth transition */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Ensure full width */
+}
+
+/* Hover Effect for Dropdown Items */
+.navbar .dropdown-item:hover {
+    background-color: #A53838; /* Hover background color (matches navbar gradient) */
+    color: #F4A261; /* Hover text color */
+    transform: translateX(5px); /* Slight horizontal shift */
+}
+
+/* Active/Focused Dropdown Item */
+.navbar .dropdown-item:focus,
+.navbar .dropdown-item:active {
+    background-color: #A53838; /* Active background color (matches navbar gradient) */
+    color: #F4A261; /* Active text color */
+}
+
+/* Dropdown Toggle Arrow Color */
+.navbar .nav-link.dropdown-toggle::after {
+    border-top-color: #F5EFE6; /* Match navbar text color */
+}
+
+/* Hover Effect for Dropdown Toggle */
+.navbar .nav-link.dropdown-toggle:hover::after {
+    border-top-color: #F4A261; /* Change arrow color on hover */
+}
+/* Main Content Section */
+.main {
+    padding: 60px 10%;
+    background: linear-gradient(180deg, #F5EFE6 50%, #D9D9D9 100%);
+}
+.main .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main .bottom.left-image {
+    flex-direction: row-reverse;
+}
+
+.main .bottom.right-image {
+    flex-direction: row;
+}
+
+.main .bottom .text-content {
+    width: 60%; /* Adjust width of text */
+    padding: 20px;
+}
+
+.main .bottom img {
+    width: 35%; /* Adjust width of images */
+    max-width: 400px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.main .bottom img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Cards (Bottom Section) */
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    padding: 40px;
+    background: rgba(30, 58, 95, 0.8);
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.bottom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Headings */
+.head {
+    font-size: 28px;
+    font-weight: 700;
+    color: #F4A261;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Paragraphs */
+.para {
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 500px;
+    color: #F5EFE6;
+}
+
+/* Images */
+.bottom img {
+    height: 320px;
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.bottom img:hover {
+    transform: scale(1.05);
+}
+
+/* Buttons */
+.btn-custom {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: #F4A261;
+    color: #1E3A5F;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom:hover {
+    background: #A53838;
+    color: #F5EFE6;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Glassmorphism Box */
+.glass-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .para {
+        max-width: 100%;
+    }
+
+    .bottom img {
+        margin-top: 20px;
+    }
+
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1.1rem;
+    }
+
+    .btn-custom {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+/* Footer Styling */
+footer {
+    background: linear-gradient(to right, #001F3F, #003366);
+    color: white;
+    padding: 50px 0;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Top Border */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(45deg, #FFD700, #FF8C00);
+    border-radius: 2px;
+}
+
+/* Footer Headings */
+footer h5 {
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    display: inline-block;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 18px;
+    background: linear-gradient(90deg, #FFD700, #FF8C00, #FF4500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adding a subtle glowing underline effect */
+footer h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700, #FF8C00, #FF4500);
+    transition: width 0.4s ease-in-out;
+}
+
+footer h5:hover::after {
+    width: 100%;
+}
+
+/* Hover Effect - Text Glow */
+footer h5:hover {
+    text-shadow: 0px 0px 10px rgba(255, 165, 0, 0.8);
+    transform: scale(1.05);
+}
+
+
+/* Text and Links */
+footer p, footer a {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #FFD700;
+    text-shadow: 0px 0px 5px rgba(255, 215, 0, 0.7);
+    transform: translateX(5px);
+}
+
+/* Quick Links */
+footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+footer ul li:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Info */
+footer .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+footer .contact-info i {
+    margin-right: 10px;
+    color: #FFD700;
+}
+
+/* Social Media Icons */
+footer .social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .social-icons a {
+    color: white;
+    font-size: 22px;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+footer .social-icons a:hover {
+    color: #FFD700;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.7);
+}
+
+/* Copyright Section */
+footer .copyright {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+
+/* Floating Glow Effect */
+footer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 200px;
+    height: 5px;
+    background: linear-gradient(45deg, #FFD700, #FF8C00);
+    transform: translateX(-50%);
+    border-radius: 50px;
+    opacity: 0.8;
+    box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.8);
+    animation: glow 2s infinite alternate ease-in-out;
+}
+
+@keyframes glow {
+    0% {
+        width: 150px;
+        opacity: 0.6;
+    }
+    100% {
+        width: 250px;
+        opacity: 1;
+    }
+}
+

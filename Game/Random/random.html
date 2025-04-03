@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="random.css">
+</head>
+<body>
+    <!-- Navbar -->
+      <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001F3F;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../logo.webp" id="myLOGO" style="height: 50px; border-radius: 50%; margin-bottom: 10px;">
+            <span id="myH2">PROJECT-S</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="../../Home.html">Home</a></li>
+                
+                <!-- Games Section Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Games Section
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="random.html">Random Number</a></li>
+                        <li><a class="dropdown-item" href="../Typespeed.html">Type Speed</a></li>
+                    </ul>
+                </li>
+        
+                <li class="nav-item"><a class="nav-link" href="../../TodoList/TodoList.html">To-do List</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../TimeTable.html">TimeTable</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../Notes/notes.html">Notes</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../about.html">AboutUs</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="game-container">
+    <div class="left-section">
+        <h1>Guess the Number</h1>
+        <p>Select Difficulty:</p>
+        <select id="difficulty" onchange="setDifficulty()">
+            <option value="easy">Easy (60s)</option>
+            <option value="medium">Medium (30s)</option>
+            <option value="hard">Hard (15s)</option>
+        </select>
+        <p>Guess a number between 1 and 100</p>
+        <input type="number" id="userGuess" placeholder="Enter your guess">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <p id="message"></p>
+        <p>Attempts: <span id="attempts">0</span></p>
+        <p>Best Score: <span id="bestScore">--</span></p>
+        <p>Time Left: <span id="timer">60</span>s</p>
+        <button onclick="resetGame()">Restart Game</button>
+        <div class="hint-section">
+            <p id="hint"></p>
+        </div>
+    </div>
+
+    <div class="right-section">
+        <img src="Random.webp" alt="Game Image" class="game-image">
+        <div class="scoreboard">
+            <h3>Top Scores</h3>
+            <ul id="topScores"></ul>
+        </div>
+    </div>
+
+    <!-- Audio elements -->
+    <audio id="correctSound" src="correct.wav"></audio>
+    <audio id="wrongSound" src="wrong.wav"></audio>
+    <audio id="timeoutSound" src="timeout.wav"></audio>
+</div>
+    <!-- Footer -->
+    <footer class="text-white pt-5" style="background-color: #001F3F;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">About Us</h5>
+                    <p class="small">Project S is an all-in-one academic platform that helps students efficiently manage their tasks, schedules, and study progress.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../../Home.html" class="text-white text-decoration-none">🏠 Home</a></li>
+                        <li><a href="../../Game/Random/random.html" class="text-white text-decoration-none">🎮 Games Section</a></li>
+                        <li><a href="../../TodoList/TodoList.html" class="text-white text-decoration-none">📝 To-Do List</a></li>
+                        <li><a href="../../TimeTable.html" class="text-white text-decoration-none">📅 TimeTable</a></li>
+                        <li><a href="../../Notes/notes.html" class="text-white text-decoration-none">📖 Notes</a></li>
+                        <li><a href="../../about.html" class="text-white text-decoration-none">📊 AboutUs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Contact Us</h5>
+                    <p><i class="fas fa-envelope"></i> KALI_YUGA_CODERS</p>
+                    <p><i class="fas fa-phone"></i> +91 96xxxxxxxx</p>
+                    <p><i class="fas fa-map-marker-alt"></i> India</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://www.linkedin.com/in/jayasimha-p-49465b22a" class="text-white fs-4" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        
+                        <a href="https://github.com/your-github-username" class="text-white fs-4" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 mt-4" style="background-color: rgba(255, 255, 255, 0.1);">
+            © 2024 <strong>Project S</strong>. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="random.js"></script>
+</body>
+</html>

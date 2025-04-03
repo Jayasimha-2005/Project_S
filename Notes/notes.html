@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Project S</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001F3F;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../logo.webp" id="myLOGO" style="height: 50px; border-radius: 50%; margin-bottom: 10px;">
+                <span id="myH2">PROJECT-S</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="../Home.html">Home</a></li>
+                    
+                   <!-- Games Section Dropdown -->
+                   <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Games Section
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="../Game/Random/random.html">Random Number</a></li>
+                        <li><a class="dropdown-item" href="../Game/Typespeed.html">Type Speed</a></li>
+                    </ul>
+                </li>
+            
+                    <li class="nav-item"><a class="nav-link" href="../TodoList/TodoList.html">To-do List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../TimeTable.html">TimeTable</a></li>
+                    <li class="nav-item"><a class="nav-link" href="notes.html">Notes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Notes Section -->
+    <div class="notes-container">
+        <!-- Sidebar for Folders and Tags -->
+        <div class="sidebar">
+            <h3>Folders</h3>
+            <ul id="folder-list">
+                <li><i class="fas fa-folder"></i> All</li>
+                <li><i class="fas fa-folder"></i> Work</li>
+                <li><i class="fas fa-folder"></i> Personal</li>
+                <li><i class="fas fa-folder"></i> Study</li>
+            </ul>
+            <h3>Tags</h3>
+            <ul id="tag-list">
+                <li><i class="fas fa-tag"></i> Urgent</li>
+                <li><i class="fas fa-tag"></i> Important</li>
+                <li><i class="fas fa-tag"></i> Completed</li>
+            </ul>
+        </div>
+
+        <!-- Main Notes Area -->
+        <div class="main-notes">
+            <div class="notes-header">
+                <h1>My Notes</h1>
+                <div class="actions">
+                    <button id="new-note-btn" data-bs-toggle="modal" data-bs-target="#addNoteModal">
+                        <i class="fas fa-plus"></i> New Note
+                    </button>
+                    <input type="text" id="search-notes" placeholder="Search notes...">
+                </div>
+            </div>
+            <div class="notes-list" id="notes-list">
+                <!-- Notes will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add New Note Modal -->
+    <div class="modal fade" id="addNoteModal" tabindex="-1" aria-labelledby="addNoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addNoteModalLabel">Add New Note</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="noteForm">
+                        <div class="mb-3">
+                            <label for="noteTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="noteTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="noteContent" class="form-label">Content</label>
+                            <textarea class="form-control" id="noteContent" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="noteCategory" class="form-label">Category</label>
+                            <select class="form-select" id="noteCategory" required>
+                                <option value="Work">Work</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Study">Study</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveNoteBtn">Save Note</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Tag Modal -->
+    <div class="modal fade" id="addTagModal" tabindex="-1" aria-labelledby="addTagModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTagModalLabel">Add Tag</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="tagForm">
+                        <div class="mb-3">
+                            <label for="tagName" class="form-label">Select Tag</label>
+                            <select class="form-select" id="tagName" required>
+                                <option value="Quick">Quick</option>
+                                <option value="Important">Important</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveTagBtn">Add Tag</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+   <!-- Footer -->
+   <footer class="text-white pt-5" style="background-color: #001F3F;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5 class="text-uppercase fw-bold mb-3">About Us</h5>
+                <p class="small">
+                    Project S is an all-in-one academic platform that helps students efficiently manage their tasks, schedules, and study progress.
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="../Home.html" class="text-white text-decoration-none">🏠 Home</a></li>
+                    <li><a href="../Game/Typespeed.html" class="text-white text-decoration-none">🎮 Games Section</a></li>
+                    <li><a href="../TodoList/TodoList.html" class="text-white text-decoration-none">📝 To-Do List</a></li>
+                    <li><a href="../TimeTable.html" class="text-white text-decoration-none">📅 TimeTable</a></li>
+                    <li><a href="notes.html" class="text-white text-decoration-none">📖 Notes</a></li>
+                    <li><a href="../about.html" class="text-white text-decoration-none">📊 About Us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-4">
+                <h5 class="text-uppercase fw-bold mb-3">Contact Us</h5>
+                <p><i class="fas fa-envelope"></i> KALI_YUGA_CODERS</p>
+                <p><i class="fas fa-phone"></i> +91 96xxxxxxxx</p>
+                <p><i class="fas fa-map-marker-alt"></i> India</p>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="https://www.linkedin.com/in/jayasimha-p-49465b22a" class="text-white fs-4" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    <a href="https://github.com/your-github-username" class="text-white fs-4" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center p-3 mt-4" style="background-color: rgba(255, 255, 255, 0.1);">
+        © 2024 <strong>Project S</strong>. All Rights Reserved.
+    </div>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="notes.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+   <!-- Navbar -->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001F3F;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="logo.webp" id="myLOGO" style="height: 50px; border-radius: 50%; margin-bottom: 10px;">
+            <span id="myH2">PROJECT-S</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="Home.html">Home</a></li>
+                
+                <!-- Games Section Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Games Section
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="Game/Random/random.html">Random Number</a></li>
+                        <li><a class="dropdown-item" href="Game/Typespeed.html">Type Speed</a></li>
+                    </ul>
+                </li>
+        
+                <li class="nav-item"><a class="nav-link" href="TodoList/TodoList.html">To-do List</a></li>
+                <li class="nav-item"><a class="nav-link" href="TimeTable.html">TimeTable</a></li>
+                <li class="nav-item"><a class="nav-link" href="Notes/notes.html">Notes</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
+                <!-- Logout Icon -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" title="Logout">
+                        <i class="fas fa-sign-out-alt fa-lg"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="home1.jpeg" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption">
+                    <h1 id="welcomeHead">Welcome to EduSphere</h1>
+                    <p id="welcomePara">Your All-in-one Platform For Academic Success & Personal Growth</p>
+                    <a href="#exploreus" class="btn btn-primary">Explore Us</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="home2.jpeg" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption">
+                    <h1 id="welcomeHead">Welcome to EduSphere</h1>
+                    <p id="welcomePara">Your All-in-one Platform For Academic Success & Personal Growth</p>
+                    <a href="#exploreus" class="btn btn-primary">Explore Us</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="home3.jpg" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption">
+                    <h1 id="welcomeHead">Welcome to EduSphere</h1>
+                    <p id="welcomePara">Your All-in-one Platform For Academic Success & Personal Growth</p>
+                    <a href="#exploreus" class="btn btn-primary">Explore Us</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <!-- About Us Section -->
+<div class="main" id="exploreus">
+    <!-- To-Do List Section -->
+
+    <a href="TodoList/TodoList.html" class="bottom left-image" style="text-decoration: none; color: inherit;">
+    <div class="text-content">
+        <h1 class="head">TO-DO LIST :</h1>
+        <p class="para w-70">
+            The To-Do List in <span style="font-style: italic;">Project S</span> helps students stay organized by managing tasks, deadlines, and priorities. It enables task creation, updates, and completion tracking, ensuring students remain on top of their academic goals.
+        </p>
+    </div>
+    <img src="TodoList.webp" alt="To-Do List">
+</a>
+
+
+    <!-- Time Table Section -->
+    <a href="TimeTable.html" class="bottom right-image" style="text-decoration: none; color: inherit;">
+        <div class="text-content">
+            <h1 class="head">TIME TABLE :</h1>
+            <p class="para w-70">
+                The Timetable feature offers a structured layout for academic schedules, assignments, and events. Students can customize their timetables, set reminders, and effectively plan study sessions for better time management.
+            </p>
+        </div>
+        <img src="TimeTable.webp" alt="Time Table">
+    </a>
+    
+
+    <!-- Time Management Section -->
+    <a href="Notes/notes.html" class="bottom left-image" style="text-decoration: none; color: inherit;">
+        <div class="text-content">
+            <h1 class="head">NOTES:</h1>
+            <p class="para w-70">
+                Project S provides a well-structured Notes feature, allowing students to create, edit, and organize their study materials efficiently. With easy categorization, quick search, and cloud storage, students can access their notes anytime, anywhere.
+            </p>
+        </div>
+        <img src="TimeManage.webp" alt="Notes">
+    </a>
+    
+
+    <!-- Games Section -->
+    <a href="Game/Random/random.html" class="bottom right-image" style="text-decoration: none; color: inherit;">
+        <div class="text-content">
+            <h1 class="head">GAMES SECTION :</h1>
+            <p class="para w-70">
+                The Games Section offers interactive mini-games that boost cognitive skills, focus, and memory. Features include a Typing Speed Game, a Number Guessing Challenge, and more—making learning both engaging and effective.
+            </p>
+        </div>
+        <img src="GameSection.webp" alt="Games Section">
+    </a>
+    
+</div>
+<!-- Footer Section -->
+<footer class="text-white pt-5" style="background-color: #001F3F;">
+    <div class="container">
+        <div class="row">
+            <!-- About Us -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5 class="text-uppercase fw-bold mb-3">About Us</h5>
+                <p class="small">
+                    Project S is an all-in-one academic platform that helps students efficiently manage their tasks, schedules, and study progress.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="Home.html" class="text-white text-decoration-none">🏠 Home</a></li>
+                    <li><a href="Game/Typespeed.html" class="text-white text-decoration-none">🎮 Games Section</a></li>
+                    <li><a href="TodoList/TodoList.html" class="text-white text-decoration-none">📝 To-Do List</a></li>
+                    <li><a href="TimeTable.html" class="text-white text-decoration-none">📅 TimeTable</a></li>
+                    <li><a href="Notes/notes.html" class="text-white text-decoration-none">📖 Notes</a></li>
+                    <li><a href="about.html" class="text-white text-decoration-none">📊 About Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social Media -->
+            <div class="col-lg-4 col-md-12 mb-4">
+                <h5 class="text-uppercase fw-bold mb-3">Contact Us</h5>
+                <p><i class="fas fa-envelope"></i> KALI_YUGA_CODERS</p>
+                <p><i class="fas fa-phone"></i> +91 96xxxxxxxx</p>
+                <p><i class="fas fa-map-marker-alt"></i> India</p>
+
+                <!-- Social Media Icons -->
+                <div class="d-flex gap-3 mt-3">
+                    <a href="https://www.linkedin.com/in/jayasimha-p-49465b22a" class="text-white fs-4" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    <a href="https://github.com/Jayasimha0511" class="text-white fs-4" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3 mt-4" style="background-color: rgba(255, 255, 255, 0.1);">
+        © 2024 <strong>Project S</strong>. All Rights Reserved.
+    </div>
+</footer>
+
+<!-- FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+    
+    
+</body>
+</html>

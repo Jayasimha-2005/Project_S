@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 25px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1e2e, #3a3a5e);
+    padding: 50px 0; /* Add padding on top and bottom */
+  }
+  
+
+section {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000,#0f0,#000);
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+section span {
+  position: relative;
+  display: block;
+  width: calc(6.25vw - 2px);
+  height: calc(6.25vw - 2px);
+  background: #181818;
+  z-index: 2;
+  transition: 1.5s;
+}
+
+section span:hover {
+  background: #0f0;
+  transition: 0s;
+}
+
+section .signin {
+  position: absolute;
+  width: 500px;
+  background: #222;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 60px;
+  box-shadow: 0 15px 35px rgba(0,0,5,10);
+}
+
+section .signin .content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+section .signin .content h2 {
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+}
+
+section .signin .content .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+section .signin .content .form .inputBox {
+  position: relative;
+  width: 100%;
+}
+
+section .signin .content .form .inputBox input {
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+section .signin .content .form .inputBox i {
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i {
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.signin .content .form .links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.signin .content .form .links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.signin .content .form .links a:nth-child(2) {
+  color: #0f0;
+  font-weight: 600;
+}
+
+.signin .content .form .inputBox input[type="submit"] {
+  padding: 10px;
+  border-radius: 60px;
+  background: #0f0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+input[type="submit"]:active {
+  opacity: 0.6;
+}
+
+
+
+/* General Styles */
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1e2e, #3a3a5e);
+  }
+  
+  /* Container Styling */
+  .signin {
+    position: relative;
+    width: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: #fff;
+  }
+  
+  .signin h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .signin p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  /* Input Box */
+  .inputBox {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .inputBox input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .inputBox i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #f7a6a6;
+    transition: 0.3s;
+  }
+  
+  .inputBox input:focus + i {
+    color: #00ff99;
+  }
+  
+  /* Links */
+  .links {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if needed) */
+    font-size: 14px;
+    margin-bottom: 15px;
+    gap: 10px; /* Add some spacing between links */
+}
+
+  
+  /* Buttons */
+  .inputBox input[type="submit"] {
+    width: 100%;
+    background: #00ff99;
+    color: #1e1e2e;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .inputBox input[type="submit"]:hover {
+    background: #00cc77;
+  }
+  
+  /* Error Message */
+  #login-error {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 400px) {
+    .signin {
+      width: 90%;
+    }
+  }
+  /* Hover Effects */
+.inputBox input:hover {
+    box-shadow: 0 0 8px #00ff99;
+    transition: 0.3s;
+  }
+  
+  .inputBox i:hover {
+    color: #00ff99;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+  }
+  
+  .inputBox input[type="submit"]:hover {
+    background: #00cc77;
+    box-shadow: 0 0 12px #00ff99;
+    transform: scale(1.05);
+    transition: 0.3s;
+  }
+  
+  section span:hover {
+    background: #0f0;
+    box-shadow: 0 0 10px #0f0;
+    transition: 0.2s;
+  }
+  
+  .signin:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
+    transition: 0.3s;
+  }
+  /* Register Button - Special Effect */
+.register-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #67ff67;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+  }
+  
+  /* Glowing Effect */
+  .register-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 500%;
+    background: radial-gradient(circle, rgba(103, 255, 103, 0.6) 10%, rgba(0, 0, 0, 0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .register-btn:hover {
+    background: #c6eec6c9;
+    color: #121212;
+    box-shadow: 0px 0px 15px rgba(176, 255, 176, 0.7);
+  }
+  
+  .register-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  /* Pulsating Animation */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 5px rgba(103, 255, 103, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(103, 255, 103, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(103, 255, 103, 0.4);
+    }
+  }
+  
+  .register-btn {
+    animation: pulse 1.5s infinite alternate;
+  }
+  
