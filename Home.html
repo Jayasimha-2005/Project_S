@@ -147,6 +147,21 @@
     </a>
     
 </div>
+<!-- START: Chatbot UI -->
+<button id="chat-toggle-button">💬</button>
+
+<div id="chat-window">
+    <div id="chat-header">Project-S</div> <!-- Updated Header -->
+    <div id="chat-messages">
+        <!-- Messages will appear here -->
+    </div>
+    <div id="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Type 'help' for options...">
+        <button id="chat-send-button">Send</button>
+    </div>
+</div>
+<!-- END: Chatbot UI -->
+
 <!-- Footer Section -->
 <footer class="text-white pt-5" style="background-color: #001F3F;">
     <div class="container">
@@ -201,6 +216,156 @@
 
 <!-- FontAwesome for icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- DOM Elements ---
+        const chatToggleButton = document.getElementById('chat-toggle-button');
+        const chatWindow = document.getElementById('chat-window');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const chatSendButton = document.getElementById('chat-send-button');
+
+        // --- State ---
+        let isChatOpen = false;
+
+        // --- Functions ---
+
+        function toggleChatWindow() {
+            isChatOpen = !isChatOpen;
+            chatWindow.classList.toggle('open');
+            if (isChatOpen && chatMessages.children.length === 0) {
+                addMessage("Hello! I can help you navigate. Type 'help' for available pages.", 'bot');
+            }
+             if(isChatOpen) {
+                chatInput.focus();
+             }
+        }
+
+        function addMessage(text, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', `${sender}-message`);
+            messageElement.textContent = text;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            // Return not needed now as we don't remove thinking messages
+        }
+
+        function handleSendMessage() {
+            const userText = chatInput.value.trim();
+            if (userText === '') return;
+
+            addMessage(userText, 'user');
+            chatInput.value = '';
+
+            // Generate and display the bot's response immediately
+            generateBotResponse(userText); // No need for setTimeout if response is instant
+            chatInput.focus();
+        }
+
+        // Generates the bot's response based ONLY on local rules
+        function generateBotResponse(userInput) { // Removed 'async'
+            const lowerInput = userInput.toLowerCase();
+            // Define the fallback message FIRST
+            let botResponse = "Sorry, I don't understand that command. Type 'help' to see what I can do.";
+
+            // --- Handle LOCAL commands ---
+            if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hey')) {
+                const greetings = [
+                    "Hi there! How can I help you navigate?",
+                    "Hello! What can I do for you today?",
+                    "Hey! Need any assistance?",
+                    "Greetings! How can I assist you?",
+                    "Hi! Looking for something specific?",
+                    "Hey there! Let me know if you need help.",
+                    "Welcome to Project-S! How can I guide you?",
+                    "Hello! Ready to make studying more efficient?"
+                ];
+                
+                botResponse = greetings[Math.floor(Math.random() * greetings.length)];
+            } 
+            else if (lowerInput.includes('what is project-s') || lowerInput.includes('about project-s')) {
+                botResponse = "📚 Project-S (SmartStudy) is your all-in-one academic platform for success & personal growth! " +
+                              "It helps you plan schedules, track tasks, take notes, and even learn through educational games. " +
+                              "Let me know if you need help navigating the features!";
+            } 
+            else if (lowerInput.includes('features of project-s') || lowerInput.includes('what can project-s do')) {
+                botResponse = "✨ Key Features of Project-S:\n\n" +
+                              "📌 To-Do List – Organize tasks and track progress.\n" +
+                              "📅 TimeTable – Plan and structure study sessions.\n" +
+                              "📝 Notes Keeper – Store and access study materials.\n" +
+                              "🎮 Educational Games – Enhance learning in a fun way.";
+            }
+            else if (lowerInput.includes('why choose project-s')) {
+                botResponse = "🚀 Why Choose Project-S?\n\n" +
+                              "✅ User-Friendly – Simple and easy to navigate.\n" +
+                              "✅ Completely Free – No hidden costs!\n" +
+                              "✅ Works on All Devices – Access anywhere, anytime.\n" +
+                              "✅ Minimalist & Distraction-Free – Focus on what matters.";
+            }
+            else if (lowerInput.includes('how to use project-s') || lowerInput.includes('how does project-s work')) {
+                botResponse = "📌 How to Use Project-S?\n\n" +
+                              "1️⃣ Sign Up / Log In\n" +
+                              "2️⃣ Create a Study Plan using the TimeTable\n" +
+                              "3️⃣ Manage tasks with the To-Do List\n" +
+                              "4️⃣ Store notes in the Notes Keeper\n" +
+                              "5️⃣ Play Educational Games to learn interactively!";
+            }
+            else if (lowerInput.includes('is project-s free') || lowerInput.includes('project-s pricing')) {
+                botResponse = "💡 Yes! Project-S is 100% free to use. No hidden charges—just an intuitive platform to help students succeed.";
+            }
+            else if (lowerInput.includes('does project-s work offline') || lowerInput.includes('offline mode')) {
+                botResponse = "🌐 Project-S can work offline for core features like Notes & To-Do List. However, some functionalities (like syncing across devices) require an internet connection.";
+            }
+            
+             else if (lowerInput.includes('help')) {
+                botResponse = `Available pages:\n - 'go to timetable'\n - 'go to todo list'\n - 'go to typespeed'\n - 'go to random page'\n - 'go to Notes'`;
+            }
+            // --- Navigation ---
+            else if (lowerInput.includes('timetable') || (lowerInput.includes('go to') || lowerInput.includes('schedule'))) {
+                botResponse = "Okay, opening the timetable page...";
+                // Use setTimeout just to allow the message to appear before redirect
+                setTimeout(() => { window.location.href = 'TimeTable.html'; }, 500);
+            } else if (lowerInput.includes('todo') || lowerInput.includes('to do') || lowerInput.includes('task list')) {
+                botResponse = "Okay, opening the To-Do List page...";
+                setTimeout(() => { window.location.href = 'TodoList/TodoList.html'; }, 500);
+            } else if (lowerInput.includes('type speed') || lowerInput.includes('typing test') || lowerInput.includes('typespeed')) {
+                botResponse = "Okay, opening the Type Speed Test page...";
+                setTimeout(() => { window.location.href = 'Game/Typespeed.html'; }, 500);
+            } else if (lowerInput.includes('random') || (lowerInput.includes('go to') && lowerInput.includes('game'))) {
+                botResponse = "Okay, opening the Random page/game...";
+                setTimeout(() => { window.location.href = 'Game/Random/random.html'; }, 500);
+            } else if (lowerInput.includes('notes')) {
+                botResponse = "Okay, taking you to the notes page...";
+                setTimeout(() => { window.location.href = 'Notes/notes.html'; }, 500);
+            }
+            // --- Basic Chit-Chat ---
+             else if (lowerInput.includes('thank')) {
+                 botResponse = "You're welcome!";
+             } else if (lowerInput.includes('how are you')) {
+                botResponse = "I'm a simple local bot, ready to navigate!";
+             }
+             // --- REMOVED the useGemini flag and fetch call ---
+             // If none of the above 'if/else if' conditions matched,
+             // the botResponse remains the default fallback message defined at the start.
+
+            // Add the determined bot response (either matched command or fallback)
+            addMessage(botResponse, 'bot');
+        } // End of generateBotResponse function
+
+
+        // --- Event Listeners ---
+        chatToggleButton.addEventListener('click', toggleChatWindow);
+        chatSendButton.addEventListener('click', handleSendMessage);
+        chatInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                handleSendMessage();
+            }
+        });
+
+    }); // End DOMContentLoaded listener
+</script>
+<!-- END: Chatbot JavaScript -->
 
 
 
