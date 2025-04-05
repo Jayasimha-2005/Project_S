@@ -319,20 +319,20 @@
             }
             
              else if (lowerInput.includes('help')) {
-                botResponse = `Available pages:\n - 'go to timetable'\n - 'go to todo list'\n - 'go to typespeed'\n - 'go to random page'\n - 'go to Notes'`;
+                botResponse = `Available pages:\n - 'timetable'\n - 'todo list'\n - 'typespeed'\n - 'random page'\n - 'Notes'`;
             }
             // --- Navigation ---
-            else if (lowerInput.includes('timetable') || (lowerInput.includes('go to') || lowerInput.includes('schedule'))) {
+            else if (lowerInput.includes('timetable') || (lowerInput.includes('time') || lowerInput.includes('schedule'))) {
                 botResponse = "Okay, opening the timetable page...";
                 // Use setTimeout just to allow the message to appear before redirect
                 setTimeout(() => { window.location.href = 'TimeTable.html'; }, 500);
             } else if (lowerInput.includes('todo') || lowerInput.includes('to do') || lowerInput.includes('task list')) {
                 botResponse = "Okay, opening the To-Do List page...";
                 setTimeout(() => { window.location.href = 'TodoList/TodoList.html'; }, 500);
-            } else if (lowerInput.includes('type speed') || lowerInput.includes('typing test') || lowerInput.includes('typespeed')) {
+            } else if (lowerInput.includes('type speed') || lowerInput.includes('typing test') || lowerInput.includes('typespeed')|| lowerInput.includes('type')|| lowerInput.includes('speed')) {
                 botResponse = "Okay, opening the Type Speed Test page...";
                 setTimeout(() => { window.location.href = 'Game/Typespeed.html'; }, 500);
-            } else if (lowerInput.includes('random') || (lowerInput.includes('go to') && lowerInput.includes('game'))) {
+            } else if (lowerInput.includes('random') || (lowerInput.includes('number') && lowerInput.includes('game'))) {
                 botResponse = "Okay, opening the Random page/game...";
                 setTimeout(() => { window.location.href = 'Game/Random/random.html'; }, 500);
             } else if (lowerInput.includes('notes')) {
