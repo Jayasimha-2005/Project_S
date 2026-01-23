@@ -1,60 +1,72 @@
-🚀 Project-S (SmartStudy)
+# 🚀 Project-S (SmartStudy)
 
-Smart Academic Companion for Students 🎓
+**Smart Academic Companion for Students** 🎓
 
 Project-S (SmartStudy) is a web-based productivity platform designed to help students manage their academic life efficiently while encouraging consistent learning and personal growth.
 
 It brings together essential academic tools into one simple, distraction-free interface — making studying more organized, engaging, and effective.
 
-🧠 What is SmartStudy?
+---
 
-SmartStudy is an all-in-one academic toolkit built specifically for students.
+## 🧠 What is SmartStudy?
+
+SmartStudy is an **all-in-one academic toolkit** built specifically for students.  
 From planning daily tasks to organizing notes and following structured timetables, SmartStudy acts as a personal academic assistant throughout your learning journey.
 
-✨ Core Features
+---
 
-📝 To-Do List
-Organize daily tasks and track academic goals efficiently.
+## ✨ Core Features
 
-📅 Timetable
-Create and follow personalized study schedules.
+- 📝 **To-Do List**  
+  Organize daily tasks and track academic goals efficiently.
 
-🗂️ Notes Keeper
-Store, manage, and quickly access study materials.
+- 📅 **Timetable**  
+  Create and follow personalized study schedules.
 
-🎮 Educational Games
-Learn through interactive and engaging challenges.
+- 🗂️ **Notes Keeper**  
+  Store, manage, and quickly access study materials.
 
-🎯 Mission
+- 🎮 **Educational Games**  
+  Learn through interactive and engaging challenges.
 
-To simplify student productivity by providing tools that are easy to use, effective, and enjoyable, helping students stay focused and motivated.
+---
 
-🌍 Vision
+## 🎯 Mission
 
-To contribute to the future of digital learning by building student-first, accessible, and innovative academic solutions.
+To simplify student productivity by providing tools that are **easy to use, effective, and enjoyable**, helping students stay focused and motivated.
 
-💡 Why Choose Project-S?
+---
 
-🧼 Clean and distraction-free user interface
+## 🌍 Vision
 
-💯 Completely free and open source
+To contribute to the future of digital learning by building **student-first, accessible, and innovative academic solutions**.
 
-📱 Cross-platform support
-(Optimized for desktop mode on mobile devices)
+---
 
-🛠️ Built With
+## 💡 Why Choose Project-S?
 
-HTML
+- 🧼 Clean and distraction-free user interface  
+- 💯 Completely free and open source  
+- 📱 Cross-platform support  
+  *(Optimized for desktop mode on mobile devices)*
 
-CSS
+---
 
-JavaScript
+## 🛠️ Built With
 
-📌 Note
+- HTML  
+- CSS  
+- JavaScript  
 
-This project is developed for learning and demonstration purposes, focusing on frontend concepts and productivity-oriented design.
+---
 
-🤝 Contributions
+## 📌 Note
 
-Contributions, ideas, and suggestions are welcome!
+This project is developed for **learning and demonstration purposes**, focusing on frontend concepts and productivity-oriented design.
+
+---
+
+## 🤝 Contributions
+
+Contributions, ideas, and suggestions are welcome!  
 Feel free to fork the repository and improve SmartStudy further.
