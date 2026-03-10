@@ -7,7 +7,6 @@ Project-S (SmartStudy) is a web-based productivity platform designed to help stu
 It brings together essential academic tools into one simple, distraction-free interface — making studying more organized, engaging, and effective.
 
 ---
-
 ## 🧠 What is SmartStudy?
 
 SmartStudy is an **all-in-one academic toolkit** built specifically for students.  
@@ -47,7 +46,8 @@ To contribute to the future of digital learning by building **student-first, acc
 
 - 🧼 Clean and distraction-free user interface  
 - 💯 Completely free and open source  
-- 📱 Cross-platform support  
+- 📱 Cross-platform support
+- it work for both mobile and laptop
   *(Optimized for desktop mode on mobile devices)*
 
 ---
